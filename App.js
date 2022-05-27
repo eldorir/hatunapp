@@ -109,6 +109,18 @@ const App = () => {
     checkIfCodeExists()
   }, [success])
 
+  useEffect(() => {
+      // On Auto or Google Login
+      auth().onAuthStateChanged(loggedUser => {
+        if (loggedUser) {
+            // Do something with the user, get data from DB maybe?
+            console.log(loggedUser.uid);
+            setSignedIn(true);
+          }
+        })
+        .catch((error) => console.log("Auto login err: ", error));
+  },[])
+
   GoogleSignin.configure({
     webClientId: '203177296146-7fftclbs0til31146kkhccn5rl6q6g60.apps.googleusercontent.com',
   });
@@ -126,7 +138,15 @@ const App = () => {
 
 
   const SignInWithGoogleAsync = async () => {
-    
+    // Get the users ID token
+  const { idToken } = await GoogleSignin.signIn();
+
+  // Create a Google credential with the token
+  const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+  // Sign-in the user with the credential
+  auth().signInWithCredential(googleCredential)
+  .catch((error) => console.log("Google login err: ", error));
   }
 
   const modalOKPressed = async () => {
