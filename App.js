@@ -31,7 +31,6 @@ import SmsMenu from './SmsMenu';
 import SittingArrangement2 from './SittingArrangement2';
 import InviteList from './InviteList'
 import { getDatabase, ref, onValue, set } from "firebase/database";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 import firebase from './firebase'
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
@@ -109,20 +108,20 @@ const App = () => {
     checkIfCodeExists()
   }, [success])
 
+  // Handle user state changes
+  function onAuthStateChanged(user) {
+    console.log(user);
+    if (user){
+    setSignedIn(true);
+    }
+    else {
+     conosle.log("No User");
+    }
+  }
+
   useEffect(() => {
-    const autoAuth = getAuth();
-      // On Auto or Google Login
-      onAuthStateChanged(auth, loggedUser => {
-        if (loggedUser) {
-            // Do something with the user, get data from DB maybe?
-            console.log(loggedUser.uid);
-            setSignedIn(true);
-          }
-        else{
-         console.log('no user'); 
-        }
-        })
-        .catch((error) => console.log("Auto login err: ", error));
+      const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+      return subscriber; // unsubscribe on unmount
   },[])
 
   GoogleSignin.configure({
