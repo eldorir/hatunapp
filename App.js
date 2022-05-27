@@ -31,7 +31,6 @@ import SmsMenu from './SmsMenu';
 import SittingArrangement2 from './SittingArrangement2';
 import InviteList from './InviteList'
 import { getDatabase, ref, onValue, set } from "firebase/database";
-
 import firebase from './firebase'
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
@@ -109,6 +108,22 @@ const App = () => {
     checkIfCodeExists()
   }, [success])
 
+  // Handle user state changes
+  function onAuthStateChanged(user) {
+    console.log(user);
+    if (user){
+    setSignedIn(true);
+    }
+    else {
+     conosle.log("No User");
+    }
+  }
+
+  useEffect(() => {
+      const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+      return subscriber; // unsubscribe on unmount
+  },[])
+
   GoogleSignin.configure({
     webClientId: '203177296146-7fftclbs0til31146kkhccn5rl6q6g60.apps.googleusercontent.com',
   });
@@ -126,7 +141,15 @@ const App = () => {
 
 
   const SignInWithGoogleAsync = async () => {
-    
+    // Get the users ID token
+  const { idToken } = await GoogleSignin.signIn();
+
+  // Create a Google credential with the token
+  const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+  // Sign-in the user with the credential
+  auth().signInWithCredential(googleCredential)
+  .catch((error) => console.log("Google login err: ", error));
   }
 
   const modalOKPressed = async () => {
