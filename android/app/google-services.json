@@ -1,0 +1,101 @@
+{
+  "project_info": {
+    "project_number": "203177296146",
+    "firebase_url": "https://wolf3-f02ae-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "wolf3-f02ae",
+    "storage_bucket": "wolf3-f02ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:203177296146:android:88972dbeef4f325fb0b3cb",
+        "android_client_info": {
+          "package_name": "com.hatunapp2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "203177296146-0gq8u44507i7u5tsqiindgip2voroi3i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hatunapp2",
+            "certificate_hash": "58ae223dc1ff40ae048062917a70e51f23f42d79"
+          }
+        },
+        {
+          "client_id": "203177296146-g45jffe9655u43a8oeqv9821jed3iqb4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hatunapp2",
+            "certificate_hash": "0ddeb17d61665223567b5e6934d7e37e95c73792"
+          }
+        },
+        {
+          "client_id": "203177296146-hfvv0a58m1f6kjd53g67ch80g75v726c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hatunapp2",
+            "certificate_hash": "d1689370e6d843e40dcc6bb26c025968630651c9"
+          }
+        },
+        {
+          "client_id": "203177296146-7fftclbs0til31146kkhccn5rl6q6g60.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA69D_UUc4fmPbj43RZoo3T-xW45bM5fKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "203177296146-7fftclbs0til31146kkhccn5rl6q6g60.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:203177296146:android:6d702c1ff336e129b0b3cb",
+        "android_client_info": {
+          "package_name": "com.simplemobiletools.smsmessenger.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "203177296146-va8aelh2srkd26p05gb80v3f5lnbolou.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.simplemobiletools.smsmessenger.debug",
+            "certificate_hash": "58ae223dc1ff40ae048062917a70e51f23f42d79"
+          }
+        },
+        {
+          "client_id": "203177296146-7fftclbs0til31146kkhccn5rl6q6g60.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA69D_UUc4fmPbj43RZoo3T-xW45bM5fKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "203177296146-7fftclbs0til31146kkhccn5rl6q6g60.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "203177296146",
+    "firebase_url": "https://wolf3-f02ae-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "wolf3-f02ae",
+    "storage_bucket": "wolf3-f02ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:203177296146:android:88972dbeef4f325fb0b3cb",
+        "android_client_info": {
+          "package_name": "com.hatunapp2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "203177296146-7fftclbs0til31146kkhccn5rl6q6g60.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA69D_UUc4fmPbj43RZoo3T-xW45bM5fKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "203177296146-7fftclbs0til31146kkhccn5rl6q6g60.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
