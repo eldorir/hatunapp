@@ -126,45 +126,7 @@ const App = () => {
 
 
   const SignInWithGoogleAsync = async () => {
-    // Get the users ID token
-    const { idToken } = await GoogleSignin.signIn()
     
-    // Create a Google credential with the token
-    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-
-    // Sign-in the user with the credential
-    const user_sign_in = auth().signInWithCredential(googleCredential);
-    user_sign_in.then(async (user) => {
-      setSignedIn(true)
-      console.log(user)
-      setEmail(user.additionalUserInfo.profile.email.substring(0, user.additionalUserInfo.profile.email.indexOf('@')))
-      const db = getDatabase();
-
-      // const starCountRef = ref(db, emailText.toLowerCase() + '/code/' + codeText + '/');
-      // onValue(starCountRef, (snapshot) => {
-      //   setSuccess(snapshot.val())
-      // })
-      let code = Math.floor(Math.random() * 1000000)
-      set(ref(db, user.additionalUserInfo.profile.email.substring(0, user.additionalUserInfo.profile.email.indexOf('@')) + '/code/' + code + '/'), {
-        success: 'found'
-      });
-      setCodeText(code)
-
-
-      try {
-        await AsyncStorage.setItem('@email', user.additionalUserInfo.profile.email.substring(0, user.additionalUserInfo.profile.email.indexOf('@')))
-        // check if user asked to not show modal message again
-        const value2 = await AsyncStorage.getItem('@dont')
-        if(value2!=null){
-          setModalVisible5(true)
-        }
-        
-
-      } catch (e) {
-        // saving error
-      }
-    }).catch((error) => {
-    })
   }
 
   const modalOKPressed = async () => {
